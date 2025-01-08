@@ -35,13 +35,14 @@
     <ClCompile Include="BingeWatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md" />
+    <ResourceCompile Include="$pro_name$.rc">
+    </ResourceCompile>
+    <None Include="$pro_name$.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="$pro_name$.def">
+      <Filter>Resource Files</Filter>
+    </None>
+
   </ItemGroup>
 </Project>
