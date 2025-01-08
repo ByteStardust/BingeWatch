@@ -5,11 +5,7 @@ BingeWatch::BingeWatch(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    QStringListModel model;
-    QStringList data = { "查看", "设置" };
-    model.setStringList(data);
-    ui.lstBZhan->setModel(&model);
-    ui.lstBZhan->show();
+    ui.tbBZhanView->setColumnWidth(1, 150);
 }
 
 BingeWatch::~BingeWatch()
