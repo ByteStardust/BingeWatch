@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -15,7 +15,7 @@ struct Content
         QJsonObject obj;
         obj["视频名称"] = szVideoNick;
         obj["时长"] = szDuration;
-        obj["视频URL"] = szVideoUrl;
+        obj["URL"] = szVideoUrl;
         return obj;
     }
 
@@ -24,7 +24,7 @@ struct Content
         Content content;
         content.szVideoNick = obj.value("视频名称").toString();
         content.szDuration = obj.value("时长").toString();
-        content.szVideoUrl = obj.value("视频URL").toString();
+        content.szVideoUrl = obj.value("URL").toString();
         return content;
     }
 };
@@ -32,14 +32,14 @@ struct Config
 {
     QString szUserName;//用户名
     int nNumber;//作品数量
-    QString szMonitorUrl;//监控url（合集/作者）
+    QString szID;//用户ID
     QVector<Content> content;
     // 将结构体转换为 QJsonObject
     QJsonObject toJson() const {
         QJsonObject obj;
         obj["用户"] = szUserName;
         obj["数量"] = nNumber;
-        obj["监控URL"] = szMonitorUrl;
+        obj["ID"] = szID;
 
         QJsonArray contentArray;
         for (const auto& item : content) {
@@ -55,7 +55,7 @@ struct Config
         Config config;
         config.szUserName = obj.value("用户").toString();
         config.nNumber = obj.value("数量").toInt();
-        config.szMonitorUrl = obj.value("监控URL").toString();
+        config.szID = obj.value("ID").toString();
 
         QJsonArray contentArray = obj.value("内容").toArray();
         for (const auto& value : contentArray) {

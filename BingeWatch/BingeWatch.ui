@@ -169,6 +169,16 @@ QTableCornerButton::section{
               </column>
               <column>
                <property name="text">
+                <string>更新时间</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>是否观看</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>URL</string>
                </property>
               </column>
@@ -248,7 +258,7 @@ QTableCornerButton::section{
               </attribute>
               <column>
                <property name="text">
-                <string>用户</string>
+                <string>ID</string>
                </property>
               </column>
               <column>
@@ -258,7 +268,7 @@ QTableCornerButton::section{
               </column>
               <column>
                <property name="text">
-                <string>URL</string>
+                <string>用户</string>
                </property>
               </column>
              </widget>
@@ -357,6 +367,22 @@ QListWidget::item{
             </property>
             <item>
              <widget class="QTableWidget" name="tbDouYinView">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>
@@ -377,6 +403,16 @@ QListWidget::item{
               </column>
               <column>
                <property name="text">
+                <string>更新时间</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>是否观看</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>URL</string>
                </property>
               </column>
@@ -384,7 +420,95 @@ QListWidget::item{
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="pgDouYinMonitor"/>
+          <widget class="QWidget" name="pgDouYinMonitor">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLineEdit" name="edtDouYin"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnDouYin">
+                <property name="text">
+                 <string>添加</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tbDouYinSetting">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="rowCount">
+               <number>0</number>
+              </property>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>作品数量</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>用户</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -459,7 +583,7 @@ QListWidget::item{
            <number>0</number>
           </property>
           <widget class="QWidget" name="pgKuaiShouView">
-           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
             <property name="spacing">
              <number>0</number>
             </property>
@@ -477,6 +601,22 @@ QListWidget::item{
             </property>
             <item>
              <widget class="QTableWidget" name="tbKuaiShouView">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>
@@ -497,6 +637,16 @@ QListWidget::item{
               </column>
               <column>
                <property name="text">
+                <string>更新时间</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>是否观看</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>URL</string>
                </property>
               </column>
@@ -504,7 +654,95 @@ QListWidget::item{
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="pgKuaiShouMonitor"/>
+          <widget class="QWidget" name="pgKuaiShouMonitor">
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QLineEdit" name="edtKuaiShou"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnKuaiShou">
+                <property name="text">
+                 <string>添加</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tbKuaiShouSetting">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="rowCount">
+               <number>0</number>
+              </property>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>作品数量</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>用户</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
