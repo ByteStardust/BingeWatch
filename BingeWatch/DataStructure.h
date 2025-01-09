@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -6,61 +6,61 @@
 
 struct Content
 {
-    //QString szUser;//ÓÃ»§Ãû
-    QString szVideoNick;//ÊÓÆµÃû³Æ
-    QString szDuration;//Ê±³¤
-    QString szVideoUrl;//ÊÓÆµÁ´½Ó
-    // ½«½á¹¹Ìå×ª»»Îª QJsonObject
+    //QString szUser;//ç”¨æˆ·å
+    QString szVideoNick;//è§†é¢‘åç§°
+    QString szDuration;//æ—¶é•¿
+    QString szVideoUrl;//è§†é¢‘é“¾æ¥
+    // å°†ç»“æ„ä½“è½¬æ¢ä¸º QJsonObject
     QJsonObject toJson() const {
         QJsonObject obj;
-        obj["ÊÓÆµÃû³Æ"] = szVideoNick;
-        obj["Ê±³¤"] = szDuration;
-        obj["ÊÓÆµURL"] = szVideoUrl;
+        obj["è§†é¢‘åç§°"] = szVideoNick;
+        obj["æ—¶é•¿"] = szDuration;
+        obj["è§†é¢‘URL"] = szVideoUrl;
         return obj;
     }
 
-    // ´Ó QJsonObject ×ª»»Îª½á¹¹Ìå
+    // ä» QJsonObject è½¬æ¢ä¸ºç»“æ„ä½“
     static Content fromJson(const QJsonObject& obj) {
         Content content;
-        content.szVideoNick = obj.value("ÊÓÆµÃû³Æ").toString();
-        content.szDuration = obj.value("Ê±³¤").toString();
-        content.szVideoUrl = obj.value("ÊÓÆµURL").toString();
+        content.szVideoNick = obj.value("è§†é¢‘åç§°").toString();
+        content.szDuration = obj.value("æ—¶é•¿").toString();
+        content.szVideoUrl = obj.value("è§†é¢‘URL").toString();
         return content;
     }
 };
 struct Config
 {
-    QString szUserName;//ÓÃ»§Ãû
-    int nNumber;//×÷Æ·ÊıÁ¿
-    QString szMonitorUrl;//¼à¿Øurl£¨ºÏ¼¯/×÷Õß£©
+    QString szUserName;//ç”¨æˆ·å
+    int nNumber;//ä½œå“æ•°é‡
+    QString szMonitorUrl;//ç›‘æ§urlï¼ˆåˆé›†/ä½œè€…ï¼‰
     QVector<Content> content;
-    // ½«½á¹¹Ìå×ª»»Îª QJsonObject
+    // å°†ç»“æ„ä½“è½¬æ¢ä¸º QJsonObject
     QJsonObject toJson() const {
         QJsonObject obj;
-        obj["ÓÃ»§"] = szUserName;
-        obj["ÊıÁ¿"] = nNumber;
-        obj["¼à¿ØURL"] = szMonitorUrl;
+        obj["ç”¨æˆ·"] = szUserName;
+        obj["æ•°é‡"] = nNumber;
+        obj["ç›‘æ§URL"] = szMonitorUrl;
 
         QJsonArray contentArray;
         for (const auto& item : content) {
-            contentArray.append(item.toJson());  // µ÷ÓÃ Content µÄ toJson ·½·¨
+            contentArray.append(item.toJson());  // è°ƒç”¨ Content çš„ toJson æ–¹æ³•
         }
-        obj["ÄÚÈİ"] = contentArray;
+        obj["å†…å®¹"] = contentArray;
 
         return obj;
     }
 
-    // ´Ó QJsonObject ×ª»»Îª½á¹¹Ìå
+    // ä» QJsonObject è½¬æ¢ä¸ºç»“æ„ä½“
     static Config fromJson(const QJsonObject& obj) {
         Config config;
-        config.szUserName = obj.value("ÓÃ»§").toString();
-        config.nNumber = obj.value("ÊıÁ¿").toInt();
-        config.szMonitorUrl = obj.value("¼à¿ØURL").toString();
+        config.szUserName = obj.value("ç”¨æˆ·").toString();
+        config.nNumber = obj.value("æ•°é‡").toInt();
+        config.szMonitorUrl = obj.value("ç›‘æ§URL").toString();
 
-        QJsonArray contentArray = obj.value("ÄÚÈİ").toArray();
+        QJsonArray contentArray = obj.value("å†…å®¹").toArray();
         for (const auto& value : contentArray) {
             if (value.isObject()) {
-                config.content.append(Content::fromJson(value.toObject()));  // µ÷ÓÃ Content µÄ fromJson ·½·¨
+                config.content.append(Content::fromJson(value.toObject()));  // è°ƒç”¨ Content çš„ fromJson æ–¹æ³•
             }
         }
         return config;

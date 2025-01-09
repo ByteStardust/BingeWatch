@@ -133,6 +133,22 @@ QListWidget::item{
             </property>
             <item>
              <widget class="QTableWidget" name="tbBZhanView">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>
@@ -193,6 +209,40 @@ QListWidget::item{
             </item>
             <item>
              <widget class="QTableWidget" name="tbBZhanSetting">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+	border: 1px solid black;
+	background-color: lightgray;
+	padding: 2px;
+	font-weight: bold;
+	background-color: rgb(255, 170, 127);
+}
+QTableCornerButton::section{
+	background-color: rgb(255, 170, 127);
+}
+</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="rowCount">
+               <number>0</number>
+              </property>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>

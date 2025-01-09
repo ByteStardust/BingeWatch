@@ -1,26 +1,32 @@
 #pragma once
 #include <QThread>
+#include <cpr/cpr.h>
 #include "DataStructure.h"
 
 class MonitorThread :public QThread
 {
     Q_OBJECT
 public:
-    explicit MonitorThread(QObject* parent = nullptr) : QThread(parent) {}
+    explicit MonitorThread(QObject* parent = nullptr) : QThread(parent) {
+        session = new cpr::Session;
+    }
+    explicit MonitorThread(const QString& monitorUrl);
 private:
     QVector<Config>  m_vecCfg;
-    bool m_bIsAutoDL = false;//×Ô¶¯ÏÂÔØ
-    int m_nInterval = 600;//µ¥Î»£¨Ãë£©
+    bool m_bIsAutoDL = false;//è‡ªåŠ¨ä¸‹è½½
+    int m_nInterval = 600;//å•ä½ï¼ˆç§’ï¼‰
+    cpr::Session* session;
 
 protected:
     void run() override;
-    void GetAuthorInfo(const QString& monitorUrl, Config& cfg);//»ñÈ¡×÷ÕßĞÅÏ¢
-    void GetWorks(const QString& monitorUrl, Content& content);//»ñÈ¡×÷Æ·¼¯
 
 public:
+
     void SetAutoDL(const bool bIsAutoDL);
     void SetInterval(int nInterval);
     QVector<Config>& GetVecCfg();
-    void SetVecCfg(const QString& monitorUrl);
+    Config SetUrl(const QString& monitorUrl);
+    void GetAuthorInfo(QString monitorUrl, Config& cfg);//è·å–ä½œè€…ä¿¡æ¯
+    void GetWorks(const QString& monitorUrl, Content& content);//è·å–ä½œå“é›†
 };
 

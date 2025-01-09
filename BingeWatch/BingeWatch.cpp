@@ -1,7 +1,6 @@
-﻿#include "BingeWatch.h"
+#include "BingeWatch.h"
 #include <QStringListModel>
-#include "Tool.h"
-#include "MonitorThread.h"
+
 
 BingeWatch::BingeWatch(QWidget* parent)
     : QMainWindow(parent)
@@ -14,7 +13,7 @@ BingeWatch::BingeWatch(QWidget* parent)
     connect(ui.lstKuaiShou, &QListWidget::clicked, this, &BingeWatch::SwitchPageKuaiShou);
 
     //添加按钮
-    connect(ui.btnBZhan, &QPushButton::clicked, this, &BingeWatch::SwitchPageKuaiShou);
+    connect(ui.btnBZhan, &QPushButton::clicked, this, &BingeWatch::BtnClkBZhan);
 }
 
 BingeWatch::~BingeWatch()
@@ -58,8 +57,14 @@ void BingeWatch::BtnClkBZhan(bool checked)
         return;
     }
 
-    //加入表格显示
-
-
     //加入监控队列
+    auto thread = m_fileHandle.GetThread("B站");
+    auto cfg = thread->SetUrl(url);
+
+    //加入表格显示
+    int nIdx = ui.tbBZhanSetting->rowCount();
+    ui.tbBZhanSetting->insertRow(nIdx);
+    ui.tbBZhanSetting->setItem(nIdx, 0, new QTableWidgetItem(cfg.szUserName));
+    ui.tbBZhanSetting->setItem(nIdx, 1, new QTableWidgetItem(QString::number(cfg.nNumber)));
+    ui.tbBZhanSetting->setItem(nIdx, 2, new QTableWidgetItem(url));
 }

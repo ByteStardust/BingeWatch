@@ -2,23 +2,25 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_BingeWatch.h"
+#include "FileHandle.h"
 
 class BingeWatch : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    BingeWatch(QWidget *parent = nullptr);
+    BingeWatch(QWidget* parent = nullptr);
     ~BingeWatch();
 
 protected:
-    //Ò³ÃæÇĞ»»
+    //é¡µé¢åˆ‡æ¢
     void SwitchPageBZhan(const QModelIndex& index);
     void SwitchPageDouYin(const QModelIndex& index);
     void SwitchPageKuaiShou(const QModelIndex& index);
 
-    //Ìí¼Ó°´Å¥
+    //æ·»åŠ æŒ‰é’®
     void BtnClkBZhan(bool checked = false);
 private:
     Ui::BingeWatchClass ui;
+    FileHandle m_fileHandle;
 };
