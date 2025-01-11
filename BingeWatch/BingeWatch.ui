@@ -206,7 +206,11 @@ QTableCornerButton::section{
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
-               <widget class="QLineEdit" name="edtBZhan"/>
+               <widget class="QLineEdit" name="edtBZhan">
+                <property name="placeholderText">
+                 <string>输入主页链接或分享链接</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="btnBZhan">
@@ -440,7 +444,11 @@ QTableCornerButton::section{
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_6">
               <item>
-               <widget class="QLineEdit" name="edtDouYin"/>
+               <widget class="QLineEdit" name="edtDouYin">
+                <property name="placeholderText">
+                 <string>输入主页链接或分享链接</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="btnDouYin">
@@ -674,7 +682,11 @@ QTableCornerButton::section{
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_7">
               <item>
-               <widget class="QLineEdit" name="edtKuaiShou"/>
+               <widget class="QLineEdit" name="edtKuaiShou">
+                <property name="placeholderText">
+                 <string>输入主页链接或分享链接</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="btnKuaiShou">

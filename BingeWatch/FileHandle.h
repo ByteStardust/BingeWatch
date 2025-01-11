@@ -7,11 +7,9 @@ class FileHandle
 private:
     QFile* m_file;
     const QString m_fileName = "data.bin";
-    QMap<QString, MonitorThread*>* m_mpThread;
+    QMap<QString, Thread*>* m_mpThread;
     
 public:
-    QMap<QString, Thread*>* m_mpThread;
-
     FileHandle();
     ~FileHandle();
     void InitConfig()const;

@@ -31,7 +31,7 @@ struct Content
 struct Config
 {
     QString szUserName;//用户名
-    int nNumber;//作品数量
+    int nNumber = 0;//作品数量
     QString szID;//用户ID
     QVector<Content> content;
     // 将结构体转换为 QJsonObject

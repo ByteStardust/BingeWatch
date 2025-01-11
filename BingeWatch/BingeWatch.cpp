@@ -120,12 +120,12 @@ void BingeWatch::InitBZTable()
 void BingeWatch::InitDYTable()
 {
     auto thread = m_fileHandle.GetThread("抖音");
-    InitTable(thread->GetVecCfg(), ui.tbBZhanSetting);
+    InitTable(thread->GetVecCfg(), ui.tbDouYinSetting);
 }
 
 //初始化 B站 监控表
 void BingeWatch::InitKSTable()
 {
     auto thread = m_fileHandle.GetThread("快手");
-    InitTable(thread->GetVecCfg(), ui.tbBZhanSetting);
+    InitTable(thread->GetVecCfg(), ui.tbKuaiShouSetting);
 }
